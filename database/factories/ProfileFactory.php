@@ -18,8 +18,8 @@ class ProfileFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'firstname' => fake()->firstname(),
+            'lastname' => fake()->lastName(),
+            'firstname' => fake()->firstName(),
             'status' => ProfileStatus::INACTIVE,
         ];
     }

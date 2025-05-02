@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Admin::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignIdFor(Profile::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->text('comment');
+            $table->text('content');
             $table->timestamps();
 
             $table->unique(['admin_id', 'profile_id']);
