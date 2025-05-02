@@ -16,6 +16,12 @@ composer install
 ./vendor/bin/sail artisan migrate
 ```
 
+Optional, for test data :
+
+```shell
+./vendor/bin/sail artisan db:seed
+```
+
 ## Run
 
 ```shell
