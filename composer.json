@@ -60,7 +60,8 @@
             "@php ./vendor/bin/php-cs-fixer fix"
         ],
         "test": [
-            "@php ./vendor/bin/phpstan analyse"
+            "@php ./vendor/bin/phpstan analyse",
+            "@php artisan test"
         ]
     },
     "extra": {

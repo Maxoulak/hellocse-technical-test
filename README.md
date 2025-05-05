@@ -8,18 +8,22 @@ HelloCSE Technical Test
 - composer
 - docker
 
-## Install
+## Install - Development
 
 ```shell
 composer install
 ./vendor/bin/sail up -d
 ./vendor/bin/sail artisan migrate
+./vendor/bin/sail artisan db:seed
 ```
 
-Optional, for test data :
+## Install - Testing
 
 ```shell
-./vendor/bin/sail artisan db:seed
+composer install
+./vendor/bin/sail up -d
+./vendor/bin/sail artisan migrate --env=testing
+./vendor/bin/sail artisan db:seed --env=testing
 ```
 
 ## Run
