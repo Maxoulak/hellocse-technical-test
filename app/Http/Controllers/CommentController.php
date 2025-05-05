@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Gate;
 
 class CommentController extends Controller
 {
-    public function __construct(private readonly CommentService $commentService)
-    {
-    }
+    public function __construct(private readonly CommentService $commentService) {}
 
     /**
      * Store a newly created resource in storage.

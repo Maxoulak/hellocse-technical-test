@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Gate;
 
 class ProfileController extends Controller
 {
-    public function __construct(private readonly ProfileService $profileService)
-    {
-    }
+    public function __construct(private readonly ProfileService $profileService) {}
 
     /**
      * Display a listing of the resource.

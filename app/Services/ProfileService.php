@@ -11,9 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProfileService
 {
-    public function __construct(private readonly MediaService $mediaService)
-    {
-    }
+    public function __construct(private readonly MediaService $mediaService) {}
 
     /**
      * @return Builder<Profile>
