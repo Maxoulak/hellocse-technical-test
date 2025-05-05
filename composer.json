@@ -61,7 +61,7 @@
         ],
         "test": [
             "@php ./vendor/bin/phpstan analyse",
-            "@php artisan test"
+            "./vendor/bin/sail artisan test"
         ]
     },
     "extra": {
