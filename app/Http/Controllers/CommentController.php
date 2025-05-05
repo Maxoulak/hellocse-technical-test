@@ -8,6 +8,7 @@ use App\Http\Resources\CommentResource;
 use App\Models\Comment;
 use App\Models\Profile;
 use App\Services\CommentService;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
@@ -20,7 +21,7 @@ class CommentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCommentRequest $request, Profile $profile)
+    public function store(StoreCommentRequest $request, Profile $profile): CommentResource|JsonResponse
     {
         Gate::authorize('create', Comment::class);
 

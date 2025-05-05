@@ -71,7 +71,7 @@ class ProfileControllerTest extends TestCase
 
         $this->assertInstanceOf(Profile::class, $profile = Profile::find($response->json('data.id')));
 
-        Storage::assertExists($profile->image);
+        Storage::assertExists($profile->image ?? '');
     }
 
     public function test_update_profile(): void
@@ -110,7 +110,7 @@ class ProfileControllerTest extends TestCase
 
         $this->assertInstanceOf(Profile::class, $profile = Profile::find($response->json('data.id')));
 
-        Storage::assertExists($profile->image);
+        Storage::assertExists($profile->image ?? '');
     }
 
     public function test_delete_profile(): void
@@ -118,6 +118,8 @@ class ProfileControllerTest extends TestCase
         Storage::fake();
 
         $path = UploadedFile::fake()->image('profile.jpg')->store('uploads');
+
+        $this->assertNotFalse($path);
 
         $admin = Admin::query()->firstOrFail();
         $profile = Profile::query()->firstOrFail();

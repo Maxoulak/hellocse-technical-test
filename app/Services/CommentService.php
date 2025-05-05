@@ -9,6 +9,9 @@ use App\Models\Profile;
 
 class CommentService
 {
+    /**
+     * @param array<string, mixed> $data
+     */
     public function createComment(Admin $admin, Profile $profile, array $data): Comment
     {
         if ($this->hasAlreadyPostComment($admin, $profile)) {

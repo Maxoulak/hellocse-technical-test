@@ -1,0 +1,85 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Parameter \#1 \$admin of method App\\Services\\CommentService\:\:createComment\(\) expects App\\Models\\Admin, App\\Models\\Admin\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/CommentController.php
+
+		-
+			message: '#^Parameter \#1 \$admin of method App\\Services\\ProfileService\:\:createProfile\(\) expects App\\Models\\Admin, App\\Models\\Admin\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/ProfileController.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\CommentResource\:\:\$content\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/CommentResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\CommentResource\:\:\$created_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/CommentResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\CommentResource\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/CommentResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\CommentResource\:\:\$updated_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/CommentResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\ProfileResource\:\:\$admin_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/ProfileResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\ProfileResource\:\:\$created_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/ProfileResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\ProfileResource\:\:\$firstname\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/ProfileResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\ProfileResource\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/ProfileResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\ProfileResource\:\:\$image\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/ProfileResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\ProfileResource\:\:\$lastname\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/ProfileResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\ProfileResource\:\:\$status\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/ProfileResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\ProfileResource\:\:\$updated_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/ProfileResource.php

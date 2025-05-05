@@ -15,12 +15,18 @@ class ProfileService
     {
     }
 
+    /**
+     * @return Builder<Profile>
+     */
     public function queryActiveProfiles(): Builder
     {
         return Profile::query()
             ->where('status', ProfileStatus::ACTIVE);
     }
 
+    /**
+     * @param array<string, mixed> $data
+     */
     public function createProfile(Admin $admin, array $data, ?UploadedFile $image = null): Profile
     {
         try {
@@ -47,6 +53,9 @@ class ProfileService
         return $profile;
     }
 
+    /**
+     * @param array<string, mixed> $data
+     */
     public function updateProfile(Profile $profile, array $data, ?UploadedFile $image = null): Profile
     {
         try {
