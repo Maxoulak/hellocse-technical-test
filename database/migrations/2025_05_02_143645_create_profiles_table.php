@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Admin::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->string('lastname')->nullable();
+            $table->string('lastname');
             $table->string('firstname')->nullable();
             $table->string('image')->nullable();
             $table->enum('status', ProfileStatus::values())->default(ProfileStatus::INACTIVE);
