@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+env:
+  TZ: UTC
+  PHP_VERSION: 8.3
+  COMPOSER_ALLOW_SUPERUSER: '1' # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
+
+jobs:
+  php:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ env.PHP_VERSION }}
+          coverage: none
+          extensions: iconv, intl, imagick
+          ini-values: date.timezone=${{ env.TZ }}
+
+      - run: composer install
+
+      - run: ./vendor/bin/sail up -d
+
+      - run: ./vendor/bin/sail artisan migrate --env=testing
+
+      - run: ./vendor/bin/sail artisan db:seed --env=testing
+
+      - run: composer lint
+
+      - run: composer test
